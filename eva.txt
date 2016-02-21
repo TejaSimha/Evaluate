@@ -1,0 +1,21 @@
+#include <stdio.h>
+int a[30];
+int polynomial(int a[],int n,int k,int m)
+ {
+   if(m==0)
+     return a[n];
+   else 
+     return a[n-m]+k*polynomial(a,n,k,m-1);
+ }
+int main()
+{
+  int n, m, k,i;
+  int ans=0;
+  scanf("%d %d %d", &n, &m, &k);      
+  ans = 0;
+  for(i = n; i >= 0; i--)
+   scanf("%d", &a[i]);
+ ans=polynomial(a,n,k,m);
+  printf("%d",ans);
+  return 0;
+}
